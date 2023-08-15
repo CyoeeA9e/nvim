@@ -1,8 +1,15 @@
+-- return {
+--     -- Theme inspired by Atom
+--     'navarasu/onedark.nvim',
+--     priority = 1000,
+--     config = function()
+--         vim.cmd.colorscheme 'onedark'
+--     end
+-- }
 return {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'sainnhe/everforest',
     priority = 1000,
-    config = function()
-        vim.cmd.colorscheme 'onedark'
+    config = function ()
+        vim.cmd.colorscheme 'everforest'
     end
 }

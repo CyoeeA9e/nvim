@@ -1,7 +1,5 @@
 vim.g.mapleader = ' '
 
--- double space to enter cmd model
-vim.keymap.set('n', '<leader><leader>', ":")
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -43,3 +41,11 @@ vim.o.termguicolors = true
 
 vim.o.errorbells = false
 vim.o.visualbell = false
+
+-- keymaps
+
+-- jk to Escape
+vim.keymap.set('i', 'jk', "<Esc>")
+
+-- double space to enter cmd model
+vim.keymap.set('n', '<leader><leader>', ":")
