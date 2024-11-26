@@ -2,6 +2,7 @@ return {
   {
     'ggandor/leap.nvim',
     config = function()
+      -- vim.keymap.del('n', 's')
       require('leap').create_default_mappings()
     end,
   },
