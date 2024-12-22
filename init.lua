@@ -306,24 +306,26 @@ require('lazy').setup({
         --  All the info you're looking for is in `:help telescope.setup()`
         --
         defaults = {
+          layout_strategy = 'horizontal',
+          layout_config = {
+            horizontal = {
+              prompt_position = 'top',
+              width = { padding = 0 },
+              height = { padding = 0 },
+              preview_width = 0.5,
+            },
+          },
+          sorting_strategy = 'ascending',
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           -- },
         },
-        pickers = {
-          find_files = {
-            theme = 'ivy',
-          },
-          buffers = {
-            theme = 'ivy',
-          },
-        },
-        extensions = {
-          ['ui-select'] = {
-            require('telescope.themes').get_ivy { border = false },
-          },
-          ['cmdline'] = {},
-        },
+        -- extensions = {
+        --   -- ['ui-select'] = {
+        --   --   require('telescope.themes').get_ivy { border = false },
+        --   -- },
+        --   ['cmdline'] = {},
+        -- },
       }
 
       -- Enable Telescope extensions if they are installed
