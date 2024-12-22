@@ -316,6 +316,7 @@ require('lazy').setup({
             },
           },
           sorting_strategy = 'ascending',
+          -- border = false,
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           -- },
@@ -729,9 +730,7 @@ require('lazy').setup({
           ['<CR>'] = cmp.mapping.confirm { select = true },
           -- ['<Tab>'] = cmp.mapping.select_next_item(),
           ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif luasnip.locally_jumpable(1) then
+            if luasnip.locally_jumpable(1) then
               luasnip.jump(1)
             else
               fallback()
@@ -739,9 +738,7 @@ require('lazy').setup({
           end, { 'i', 's' }),
           --['<S-Tab>'] = cmp.mapping.select_prev_item(),
           ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.locally_jumpable(-1) then
+            if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
             else
               fallback()
@@ -810,6 +807,12 @@ require('lazy').setup({
     config = function()
       require('everforest').setup {
         italics = true,
+        on_highlights = function(hl, palette)
+          hl.TelescopeBorder = {
+            fg = palette.bg0,
+            bg = palette.bg0,
+          }
+        end,
       }
     end,
   },
