@@ -1,3 +1,9 @@
+if vim.g.neovide then
+  vim.g.neovide_position_animation_length = 0
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_floating_shadow = false
+end
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -276,9 +282,9 @@ require('lazy').setup({
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
-    -- keys = {
-    --   { '<Leader><Leader>', '<cmd>Telescope cmdline<cr>', desc = 'Cmdline' },
-    -- },
+    keys = {
+      { '<Leader><Leader>', '<cmd>Telescope cmdline<cr>', desc = 'Search Cmdline' },
+    },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
       -- it can fuzzy find! It's more than just a "file finder", it can search
@@ -807,7 +813,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.o.background = 'light'
+      -- vim.o.background = 'light'
       vim.cmd.colorscheme 'everforest'
 
       -- You can configure highlights by doing something like:
