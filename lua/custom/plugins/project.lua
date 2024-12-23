@@ -5,4 +5,11 @@ return {
       projects_config_filepath = vim.fs.normalize(vim.fn.stdpath 'data' .. '/cd-project.nvim.json'),
     }
   end,
+  keys = {
+    {
+      '<leader>sp',
+      '<cmd>CdProject<cr>',
+      desc = 'Browser projects',
+    },
+  },
 }
