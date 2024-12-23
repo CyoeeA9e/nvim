@@ -306,7 +306,8 @@ require('lazy').setup({
         --  All the info you're looking for is in `:help telescope.setup()`
         --
         defaults = {
-          layout_strategy = 'horizontal',
+          -- layout_strategy = 'horizontal',
+          layout_strategy = 'bottom_pane',
           layout_config = {
             horizontal = {
               prompt_position = 'top',
@@ -316,7 +317,7 @@ require('lazy').setup({
             },
           },
           sorting_strategy = 'ascending',
-          -- border = false,
+          border = false,
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           -- },
@@ -808,9 +809,12 @@ require('lazy').setup({
       require('everforest').setup {
         italics = true,
         on_highlights = function(hl, palette)
-          hl.TelescopeBorder = {
-            fg = palette.bg0,
-            bg = palette.bg0,
+          -- hl.TelescopeBorder = {
+          --   fg = palette.bg0,
+          --   bg = palette.bg0,
+          -- }
+          hl.TelescopeNormal = {
+            bg = palette.bg2,
           }
         end,
       }
