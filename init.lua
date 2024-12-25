@@ -19,6 +19,7 @@ vim.g.have_nerd_font = false
 --  For more options, you can see `:help option-list`
 
 vim.opt.foldmethod = 'indent'
+vim.opt.foldlevelstart = 99
 
 -- Make line numbers default
 vim.opt.number = true
@@ -116,6 +117,10 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+vim.keymap.set('n', 'zx', 'za', { desc = 'Toggle fold under cursor' })
+vim.keymap.set('n', 'zX', 'zA', { desc = 'Toggle all folds under cursor' })
+vim.keymap.set('n', 'za', 'zx', { desc = 'Update folds' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
