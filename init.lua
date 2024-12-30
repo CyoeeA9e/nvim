@@ -566,15 +566,7 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        rust_analyzer = {
-          commands = {
-            ExpandMacro = {
-              function()
-                vim.lsp.buf_request_all(0, 'rust_analyzer/expandMacro', vim.lsp.util.make_position_params(), vim.print)
-              end,
-            },
-          },
-        },
+        rust_analyzer = require 'custom.lsp.rust_analyzer',
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
